@@ -11,7 +11,6 @@ open class ExampleApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         enabledStrictMode()
-        updateLeakCanaryState()
     }
 
     private fun enabledStrictMode() {
@@ -22,10 +21,5 @@ open class ExampleApplication : Application() {
                 .penaltyDeath()
                 .build()
         )
-    }
-
-    private fun updateLeakCanaryState() {
-        var CanaryEnable = true
-        LeakCanary.config = LeakCanary.config.copy(dumpHeap = CanaryEnable)
     }
 }
